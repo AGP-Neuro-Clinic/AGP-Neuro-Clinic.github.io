@@ -3739,6 +3739,7 @@
                     padding-bottom: 50px !important;
                 }
             }
+        }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156002098-1"></script>
     <script>
@@ -4874,7 +4875,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="field-group">
-                                                                        <i class="tm-skincolor ti-mobile"></i><span
+                                                                        <i class="tm-skincolor ti-email"></i><span
                                                                             class="wpcf7-form-control-wrap your-email"><input
                                                                                 type="email" name="your-email" value=""
                                                                                 size="40"
@@ -4886,7 +4887,7 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="field-group">
-                                                                        <i class="tm-skincolor ti-email"></i><span
+                                                                        <i class="tm-skincolor ti-mobile"></i><span
                                                                             class="wpcf7-form-control-wrap your-phone"><input
                                                                                 type="text" name="your-phone" value=""
                                                                                 size="40"
@@ -4902,7 +4903,7 @@
                                                                     <div class="field-group">
                                                                         <i class="tm-skincolor ti-calendar"></i><span
                                                                             class="wpcf7-form-control-wrap date"><input
-                                                                                type="text" name="date" value=""
+                                                                                type="date" name="date" value=""
                                                                                 size="40"
                                                                                 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required hasDatepicker"
                                                                                 aria-required="true"
@@ -4912,19 +4913,70 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="field-group">
-                                                                        <i class="tm-skincolor ti-timer"></i><span
-                                                                            class="wpcf7-form-control-wrap your-time"><input
-                                                                                type="text" name="your-time" value=""
+                                                                        <i class="tm-skincolor ti-comment-alt"></i><span
+                                                                            class="wpcf7-form-control-wrap your-time"><textarea
+                                                                                name="your-details" value=""
                                                                                 size="40"
                                                                                 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                 aria-required="true"
                                                                                 aria-invalid="false"
-                                                                                placeholder="Appointment Time" /></span>
+                                                                                placeholder="Short summary (Optional)"></textarea></span>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <textarea id="my-body" style="display: none;">
+Hi,
+
+I would like to book an appointment with you. Below are my appointment details:
+
+Name: {name}
+Contact Email: {email}
+Contact Phone: {phone}
+Appointment Date: {date}
+Details: {details}
+
+Thanks and Regards,
+{name}
+                                                            </textarea>
+                                                            <script>
+                                                                document.getElementsByName('date')[0].min = new Date().toISOString().split("T")[0];
+                                                                function sendMail() {
+                                                                    let body = document.getElementById('my-body').value;
+                                                                    let date = document.getElementsByName('date')[0].value;
+                                                                    let details = document.getElementsByName('your-details')[0].value;
+                                                                    let name = document.getElementsByName('your-name')[0].value;
+                                                                    let email = document.getElementsByName('your-email')[0].value;
+                                                                    let phone = document.getElementsByName('your-phone')[0].value;
+
+                                                                    if (name == '' || email == '' || phone == '' || date == '') {
+                                                                        alert('Please fill all required fields');
+                                                                        return;
+                                                                    }
+
+                                                                    // Check if date is valid
+                                                                    if (new Date(date) < new Date().setHours(0, 0, 0, 0)) {
+                                                                        alert('Please select a valid date');
+                                                                        return;
+                                                                    }
+
+                                                                    body = body.replace('{name}', name);
+                                                                    body = body.replace('{name}', name);   // Replace twice to replace in the signature
+                                                                    body = body.replace('{email}', email);
+                                                                    body = body.replace('{phone}', phone);
+                                                                    body = body.replace('{date}', date);
+                                                                    body = body.replace('{details}', details);
+
+                                                                    let subject = "Appointment Request on " + date + " from " + name;
+
+                                                                    let link = "mailto:agpneuroclinic@gmail.com"
+                                                                            + "?subject=" + encodeURIComponent(subject)
+                                                                            + "&body=" + encodeURIComponent(body)
+                                                                    ;
+                                                                    window.location.href = link;
+                                                                }
+                                                            </script>
                                                             <div class=""><input type="submit" value="Book Appointment"
-                                                                    class="wpcf7-form-control wpcf7-submit tm-vc_general tm-vc_btn3-shape-square tm-vc_btn3-color-skin" />
+                                                                    class="book-appointment wpcf7-form-control wpcf7-submit tm-vc_general tm-vc_btn3-shape-square tm-vc_btn3-color-skin" onclick="sendMail(); return false;" onsubmit="return false;" />
                                                                 <div class="wpcf7-response-output wpcf7-display-none">
                                                                 </div>
                                                             </div>
