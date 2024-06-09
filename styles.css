@@ -1,0 +1,31 @@
+.menu-item-dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.menu-item-dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.menu-item-dropdown-content a:hover {background-color: #f1f1f1}
+
+.menu-item-dropdown:hover .menu-item-dropdown-content {
+    display: block;
+}
+
+.menu-item-dropdown-item {
+    line-height: normal;
+}
+
+.blog-main {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
