@@ -34,3 +34,11 @@ display: block;
 .display-block {
     display: block !important;
 }
+
+.site-main {
+    padding: 0px !important;
+}
+
+.fullwidthbanner-container {
+    height: 350px !important;
+}

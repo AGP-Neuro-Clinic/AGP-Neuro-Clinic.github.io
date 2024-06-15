@@ -4085,7 +4085,7 @@
                                 rel="stylesheet" property="stylesheet" media="all">
                             <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
                                 data-source="gallery"
-                                style="margin:0px auto;background:#ebf0f0;padding:0px;margin-top:0px;margin-bottom:0px; background-image: url(./img/website-top.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                style="margin:0px auto;background:#ebf0f0;padding:0px;margin-top:0px;margin-bottom:0px; background-image: url(./img/website-top-crop.png); background-repeat: repeat; background-size: contain; background-position: center;">
                                 <!-- START REVOLUTION SLIDER 5.4.8.2 fullwidth mode -->
                                 <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;"
                                     data-version="5.4.8.2">
@@ -4270,8 +4270,118 @@
                                     </header><!-- .entry-header -->
 
                                     <div class="entry-content">
+                                        <div>
+                                            <style>
+                                                @keyframes scroll {
+                                                0% {
+                                                transform: translateX(0);
+                                                }
+                                                100% {
+                                                transform: translateX(calc(-250px * 9));
+                                                }
+                                                }
+                                                .slider {
+                                                background: white;
+                                                /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+                                                height: 333px;
+                                                margin: auto;
+                                                overflow: hidden;
+                                                position: relative;
+                                                width: fit-content;
+                                                }
+                                                .slider::before, .slider::after {
+                                                background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+                                                content: "";
+                                                height: 333px;
+                                                position: absolute;
+                                                width: 200px;
+                                                z-index: 2;
+                                                }
+                                                .slider::after {
+                                                right: 0;
+                                                top: 0;
+                                                transform: rotateZ(180deg);
+                                                }
+                                                .slider::before {
+                                                left: 0;
+                                                top: 0;
+                                                }
+                                                .slider .slide-track {
+                                                animation: scroll 40s linear infinite;
+                                                display: flex;
+                                                width: calc(250px * 18);
+                                                }
+                                                .slider .slide {
+                                                height: 333px;
+                                                width: 250px;
+                                                }
+
+                                                .slider .slide-track img {
+                                                    height: 100%;
+                                                    padding: 20px 10px 20px 10px;
+                                                }
+                                            </style>
+                                            <div class="slider">
+                                                <div class="slide-track">
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0001.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0002.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0003.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0004.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0005.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0006.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0001.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0002.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0003.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0004.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0005.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0006.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0001.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0002.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0003.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0004.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0005.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="/img/carousel/IMG-20240615-WA0006.jpg" height="100" width="250" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div data-vc-full-width="true" data-vc-full-width-init="false"
-                                            class="tm-row wpb_row vc_row-fluid vc_custom_1548150252947 tm-zindex-2 tm-bgimage-position-center_center">
+                                            class="tm-row wpb_row vc_row-fluid vc_custom_1548150252947 tm-zindex-2 tm-bgimage-position-center_center" style="margin-top: 50px;">
 
 
                                             <div class="vc_row container">
