@@ -41,4 +41,5 @@ display: block;
 
 .fullwidthbanner-container {
     height: 350px !important;
+    background-size: auto 100% !important;
 }
