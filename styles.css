@@ -39,6 +39,10 @@ display: block;
     padding: 0px !important;
 }
 
+.blog-main {
+    padding: 20px !important;
+}
+
 .fullwidthbanner-container {
     height: 350px !important;
     background-size: auto 100% !important;
