@@ -47,3 +47,7 @@ display: block !important;
     height: 350px !important;
     background-size: auto 100% !important;
 }
+
+.color-black {
+    color: black !important;
+}
