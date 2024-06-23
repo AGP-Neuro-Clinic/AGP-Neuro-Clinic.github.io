@@ -51,3 +51,9 @@ display: block !important;
 .color-black {
     color: black !important;
 }
+
+.prf-viewer {
+    width: 100%;
+    height: calc(100vh - 200px);
+    min-height: 400px;
+}
